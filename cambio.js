@@ -70,3 +70,25 @@ function calcular() {
     comision.value = (subtotal.value * .03).toFixed(2);
     total.value = (parseFloat(subtotal.value) + parseFloat(comision.value)).toFixed(2);
 }
+
+let totalFinal = 0;
+
+function registro() {
+    let monto = document.getElementById('cantidad');
+    let origen = document.getElementById('mOrigen');
+    let destino = document.getElementById('mDestino');
+    let subtotal = document.getElementById('subtotal');
+    let comision = document.getElementById('comision');
+    let total = document.getElementById('total');
+    let registros = document.getElementById('registros');
+    let totalGeneral = document.getElementById('totalG');
+
+    origen = getMoneda(origen.value);
+    destino = getMoneda(destino.value);
+    registros.innerText += `${monto.value} ${origen} a ${destino} - subtotal: ${subtotal.value} - comision: ${comision.value} - total: ${total.value} \n`;
+
+    totalFinal += parseFloat(total.value);
+
+    totalGeneral.innerText = `Total general: ${parseFloat(totalFinal).toFixed(2)}` 
+
+}
