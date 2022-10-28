@@ -23,3 +23,50 @@ function change() {
 
     destino.innerHTML = cambio;
 }
+
+
+function calcular() {
+    let monto = document.getElementById('cantidad').value;
+    let origen = document.getElementById('mOrigen');
+    let destino = document.getElementById('mDestino');
+    let subtotal = document.getElementById('subtotal');
+    let comision = document.getElementById('comision');
+    let total = document.getElementById('total');
+
+    if(origen.value == 1) {
+        if(destino.value == 6) {
+            subtotal.value = (monto / 19.85).toFixed(2);
+        } else if(destino.value == 7) {
+            subtotal.value = (monto / 14.70).toFixed(2);
+        } else {
+            subtotal.value = (monto / 20.05).toFixed(2);
+        }
+    } else if (origen.value == 2) {
+        if(destino.value == 5) {
+            subtotal.value = (monto * 19.85).toFixed(2);
+        } else if(destino.value == 7) {
+            subtotal.value = (monto * 1.35).toFixed(2);
+        } else {
+            subtotal.value = (monto * 0.99).toFixed(2);
+        }
+    } else if (origen.value == 3) {
+        if(destino.value == 5) {
+            subtotal.value = ((monto * 0.74) * 19.85).toFixed(2);
+        } else if(destino.value == 6) {
+            subtotal.value = (monto * 0.74).toFixed(2);
+        } else {
+            subtotal.value = ((monto * 0.74) * 0.99).toFixed(2);
+        }
+    } else if (origen.value == 4) {
+        if(destino.value == 5) {
+            subtotal.value = ((monto * 1.01) * 19.85).toFixed(2);
+        } else if(destino.value == 6) {
+            subtotal.value = (monto * 1.01).toFixed(2);
+        } else {
+            subtotal.value = ((monto * 1.01) * 1.35).toFixed(2);
+        }
+    }    
+
+    comision.value = (subtotal.value * .03).toFixed(2);
+    total.value = (parseFloat(subtotal.value) + parseFloat(comision.value)).toFixed(2);
+}
