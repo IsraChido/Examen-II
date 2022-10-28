@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash-Dólar</title>
+    <link rel="stylesheet" href="/examenCambio/cambio.css">
+    <script src="/examenCambio/cambio.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Cash-Dólar</h1>
+    </header>
+    <section>
+        <center>
+            <input type="text" id="cantidad" placeholder="Cantidad">
+            <select name="mOrigen" id="mOrigen" onchange="change()">
+                <option value="0" selected>Elija la moneda origen</option>
+                <option value="1">Peso mexicano</option>
+                <option value="2">Dólar estadounidense</option>
+                <option value="3">Dólar canadiense</option>
+                <option value="4">Euro</option>
+            </select>
+            <select name="mDestino" id="mDestino">
+                <option value="0" selected>----------------</option>
+            </select>
+            <input type="text" id="subtotal" placeholder="Subtotal" disabled>
+            <input type="text" id="comision" placeholder="Total comisión" disabled>
+            <input type="text" id="total" placeholder="Total a pagar" disabled>
+            <button onclick="calcular()">Calcular</button>
+            <button onclick="registro()">Registro</button>
+        </center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3><center>Registros realizados</center></h3>
+        <p id="registros" class="registros"></p>
+        <br>
+        <hr>
+        <button onclick="borrar()">Borrar Registro</button>
+        <p id="totalG">Total general: 0</p>
+    </section>
+
+    <footer>
+        <h2>Jesús de Israel Jiménez Tostado, todos los derechos reservados ©</h2>
+    </footer>
+</body>
+</html>
