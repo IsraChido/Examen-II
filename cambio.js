@@ -100,3 +100,20 @@ function borrar() {
     registros.innerHTML = '';
     totalGeneral.innerHTML = 'Total general: 0';
 }
+
+function getMoneda(id) {
+    switch(id) {
+        case "1":
+            case "5":
+                return "Pesos mexicanos";
+        case "2":
+            case "6":
+                return "Dólar estadounidense";
+        case "3":
+            case "7":
+                return "Dólar canadiense";
+        case "4":
+            case "8":
+                return "Euro";
+    }
+}
