@@ -92,3 +92,11 @@ function registro() {
     totalGeneral.innerText = `Total general: ${parseFloat(totalFinal).toFixed(2)}` 
 
 }
+
+function borrar() {
+    let registros = document.getElementById('registros')
+    let totalGeneral = document.getElementById('totalG')
+	
+    registros.innerHTML = '';
+    totalGeneral.innerHTML = 'Total general: 0';
+}
